@@ -1,11 +1,65 @@
 body {
+    background-image: url(Imagen2.png);
     color: antiquewhite;
-    font-family: 'Libre Baskerville';
+    font-family: 'Josefin Sans';
     margin: 0;
     background-color: rgb(47, 47, 47);
 }
 
+header {
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8rem;
+    width: 100%;
+    position:fixed;
+    backdrop-filter: blur(3px);
+}
+
 .title {
-    
+    cursor:pointer;
+    user-select: none;
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+    color: aliceblue;
+    font-family: 'Pacifico';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    border-radius: 30px;
+    position: relative;
+    top: 15rem;
+    margin: 0 auto;
+    width: 80rem;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(165, 42, 42, 0.5);
+}
+
+section article h1 {
+    user-select: none;
+    font-size: 4rem;
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+}
+
+#buscador {
+    border: 1px solid white;
+    color: rgb(255, 255, 255);
+    width: 60rem;
+    border-radius: 20px;
+    font-size: 2rem;
+    background-color: black;
+}
+
+#buscador::placeholder{
+    text-align: center;
+    font-family: 'Josefin Sans';
 }
 
