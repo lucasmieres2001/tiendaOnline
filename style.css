@@ -1,10 +1,12 @@
 body {
     background-image: url(Imagen2.png);
-    color: antiquewhite;
+    color: rgb(255, 255, 255);
     font-family: 'Josefin Sans';
     margin: 0;
     background-color: rgb(47, 47, 47);
 }
+
+
 
 header {
     z-index: 1;
@@ -35,21 +37,42 @@ section {
     position: relative;
     top: 15rem;
     margin: 0 auto;
-    width: 80rem;
-    height: 20rem;
+    width: 80%;
+    max-width: 80rem;
+    min-height: 15rem;
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(165, 42, 42, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
 }
 
+
+
+@media (max-width: 768px) {
+
+    section {
+        width: 90%;
+        height: 15rem; 
+    }
+}
+
+
 section article h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
     user-select: none;
-    font-size: 4rem;
+    font-size: 1.7rem;
     text-shadow: 0 0 5px rgb(255, 255, 255);
 }
 
 #buscador {
+    text-shadow: 0 0 2px white;
+    max-width: 100%;
+    min-width: 100%;
     border: 1px solid white;
     color: rgb(255, 255, 255);
     width: 60rem;
@@ -63,3 +86,33 @@ section article h1 {
     font-family: 'Josefin Sans';
 }
 
+#buscador::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+    display: none;
+}
+
+#welcome {
+    opacity: 1;
+    transition: opacity 2s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: rgba(23, 15, 77, 0.3);
+    backdrop-filter: blur(15px);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+#welcome h1 {
+    text-shadow: 0 0 05px white;
+    user-select: none;
+    font-family: 'Pacifico';
+    font-size: 10rem;
+    color: rgb(255, 255, 255);
+}
+
+.hide {
+    opacity: 0;
+}
