@@ -13,6 +13,9 @@ formulario.id = "formulario";
 const input1 = document.createElement("input"); 
 const input2 = document.createElement("input"); 
 const input3 = document.createElement("button");
+const error = document.createElement("h3");
+error.classList = "mensajeError";
+error.textContent = "Usuario o contraseña incorrectos, por favor, intento de nuevo.";
 input1.classList = "inputFormulario";
 input2.classList = "inputFormulario";
 input1.placeholder = "Usuario";
@@ -27,6 +30,7 @@ bienvenida.appendChild(formulario);
 formulario.appendChild(input1);
 formulario.appendChild(input2);
 formulario.appendChild(input3);
+
 
 bienvenida.appendChild(textoBienvenida);
     textoBienvenida.textContent = `Iniciar sesión`;
@@ -47,6 +51,11 @@ bienvenida.appendChild(textoBienvenida);
                 pantallaCarga.removeChild(bienvenida);
             }, 2500);
             
+         }else{
+            event.preventDefault();
+            formulario.appendChild(error);
+            input1.value = "";
+            input2.value = "";
          }
 
 })

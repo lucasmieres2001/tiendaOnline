@@ -154,3 +154,9 @@ section article h1 {
 }
 
 
+.mensajeError{
+    color: red;
+    position: relative;
+    top: 5rem;
+}
+
