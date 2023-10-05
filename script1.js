@@ -1,21 +1,54 @@
 
 const pantallaCarga = document.getElementById("pantallaCarga");
-let nombreUsuario = "Lucas";
+const passwords = "papita"
+let nombreUsuario = ["Lucas", "Karen", "Elvis"];
 const bienvenida = document.createElement("div");
 bienvenida.id = "welcome";
 const textoBienvenida = document.createElement("h1");
-textoBienvenida.textContent = `¡Bienvenido ${nombreUsuario}!`;
-bienvenida.appendChild(textoBienvenida);
+
 pantallaCarga.appendChild(bienvenida);
 
+const formulario = document.createElement("form");
+formulario.id = "formulario";
+const input1 = document.createElement("input"); 
+const input2 = document.createElement("input"); 
+const input3 = document.createElement("button");
+input1.classList = "inputFormulario";
+input2.classList = "inputFormulario";
+input1.placeholder = "Usuario";
+input2.placeholder = "Contraseña";
+input3.classList ="botonIniciar";
+input1.type = "text";
+input2.type = "password";
+input3.textContent = "Iniciar"
+input1.id = "name";
+input2.id = "pass";
+bienvenida.appendChild(formulario);
+formulario.appendChild(input1);
+formulario.appendChild(input2);
+formulario.appendChild(input3);
 
-// Espera un breve momento antes de agregar la clase "hide" para que la transición se aplique
-setTimeout(() => {
-    bienvenida.style.opacity = '0'; // Cambia la opacidad gradualmente
-    bienvenida.style.transition = 'opacity 2s ease-out'; // Transición de opacidad durante 2 segundos
-}, 1000); // Retraso de 100 milisegundos
+bienvenida.appendChild(textoBienvenida);
+    textoBienvenida.textContent = `Iniciar sesión`;
 
-// Después de 2.1 segundos, elimina el elemento del DOM
-setTimeout(() => {
-    pantallaCarga.removeChild(bienvenida);
-}, 2500);
+
+    input3.addEventListener("click", ()=>{
+
+
+        if(nombreUsuario.includes(input1.value) && input2.value === passwords){
+            event.preventDefault();
+            textoBienvenida.textContent = `¡Bienvenido ${input1.value}!`;
+            setTimeout(() => {
+                bienvenida.style.transition = 'opacity 2s ease-out'; 
+                bienvenida.style.opacity = '0'; 
+            }, 1000); 
+        
+            setTimeout(() => {
+                pantallaCarga.removeChild(bienvenida);
+            }, 2500);
+            
+         }
+
+})
+    
+
