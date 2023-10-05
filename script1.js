@@ -24,6 +24,8 @@ input3.classList ="botonIniciar";
 input1.type = "text";
 input2.type = "password";
 input3.textContent = "Iniciar"
+input1.autocomplete = "off"
+input2.autocomplete = "off"
 input1.id = "name";
 input2.id = "pass";
 bienvenida.appendChild(formulario);
