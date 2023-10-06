@@ -1,12 +1,13 @@
-
+const frase = document.getElementById("frase");
 const pantallaCarga = document.getElementById("pantallaCarga");
-const passwords = "papita"
+const passwords = "admin"
 let nombreUsuario = ["Lucas", "Karen", "Elvis"];
 const bienvenida = document.createElement("div");
 bienvenida.id = "welcome";
 const textoBienvenida = document.createElement("h1");
 
 pantallaCarga.appendChild(bienvenida);
+
 
 const formulario = document.createElement("form");
 formulario.id = "formulario";
@@ -43,7 +44,16 @@ bienvenida.appendChild(textoBienvenida);
 
         if(nombreUsuario.includes(input1.value) && input2.value === passwords){
             event.preventDefault();
+            if(input1.value == "Karen"){
+            frase.textContent = `¡Hola ${input1.value}!, como desarroladora, tienes acceso al Alpha de MisCursos.com :D`;
+            textoBienvenida.textContent = `¡Bienvenida ${input1.value}!`;
+            }else{
+            frase.textContent = `¡Hola ${input1.value}!, como desarrolador, tienes acceso al Alpha de MisCursos.com :D`; 
             textoBienvenida.textContent = `¡Bienvenido ${input1.value}!`;
+            }
+            
+            input1.value = "";
+            input2.value = "";
             setTimeout(() => {
                 bienvenida.style.transition = 'opacity 2s ease-out'; 
                 bienvenida.style.opacity = '0'; 
